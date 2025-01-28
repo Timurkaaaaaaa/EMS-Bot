@@ -91,18 +91,18 @@ class Dropdown(disnake.ui.StringSelect):
         emb.add_field(name="Нарушение: ", value=f"> {results[1]}", inline=True)
         emb.add_field(name="Время на отработку: ", value=f"{results[3]} час(ов)", inline=False)
         emb.add_field(name="Доказательство: ", value=f"{results[4]}", inline=False)
-        user = disnake.utils.get(inter.guild.members, id=results[2])
-        print(user)
-        print(results[2])
-        if self.values[0] == "Выговор 1/3":
-            role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']['rebuke 1/3'])
-            await user.add_roles(role)
-        elif self.values[0] == "Выговор 2/3":
-            role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']['rebuke 2/3'])
-            await user.add_roles(role)
-        elif self.values[0] == "Переаттестация":
-            role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']["recertification"])
-            await user.add_roles(role)
+        #user = disnake.utils.get(inter.guild.members, id=int(results[2]))
+        #print(user)
+        #print(results[2])
+        #if self.values[0] == "Выговор 1/3":
+        #    role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']['rebuke 1/3'])
+        #    await user.add_roles(role)
+        #elif self.values[0] == "Выговор 2/3":
+        #    role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']['rebuke 2/3'])
+        #    await user.add_roles(role)
+        #elif self.values[0] == "Переаттестация":
+        #    role = disnake.utils.get(inter.guild.roles, id=config['roles']['punishments']["recertification"])
+        #    await user.add_roles(role)
         ChannelObject = disnake.utils.get(inter.guild.channels, id=channel)
         await ChannelObject.send(f"{inter.author.mention} выдал взыскание <@{results[2]}>", embed=emb)
         await inter.send("**🟢 Вы успешно выдали взыскание!\n-# Если роль взыскания существует - она была выдана**", ephemeral=True, delete_after=30)
