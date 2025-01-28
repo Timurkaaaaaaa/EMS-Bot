@@ -79,7 +79,7 @@ class DefibrillatorReportModal(disnake.ui.Modal):
             )
         embed.add_field(
                 name="Сотрудник получивший:",
-                value=f"<@&{recieved}>",
+                value=f"<@{recieved}>",
                 inline=True,
             )
         embed.add_field(
