@@ -36,6 +36,7 @@ class PracticingPunishments(commands.Cog):
                 timestamp=datetime.datetime.now()
             )
             emb.add_field(name="Отработал:", value=f"{inter.author.mention}")
+            emb.add_field(name="Взыскание:", value=f"{ссылка_на_взыскание}")
             emb.add_field(name="Доказательства:", value=f"{доказательства_отработки}")
 
             highstaffObj = disnake.utils.get(inter.guild.roles, id=highstaff)
