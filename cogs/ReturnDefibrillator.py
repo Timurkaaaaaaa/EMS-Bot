@@ -86,6 +86,7 @@ class ReturnDefibrillator(commands.Cog):
             await inter.response.send_message(embed=error_emb, ephemeral=True)
         else:
             await inter.response.send_modal(modal=DefibrillatorReturnModal())
+            await inter.send("**🟢 Вы успешно отправили запрос!**", ephemeral=True)
 
 
 
